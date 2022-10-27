@@ -8,7 +8,7 @@ var level = 0;
 
 // Step 7
 // Start the game
-$(document).keypress(function(event){
+$(".start-btn").click(function(event){
     if(!started){
         $("#level-title").text("Level " + level);
         setTimeout(function(){
@@ -54,12 +54,11 @@ function checkAnswer(currentLevel){
             $("body").removeClass("game-over");
         }, 200);
 
-        $("h1").text("Game Over! Press any key to restart.");
-
-// Restart the game
+        $("h1").text("Game Over!");
         startOver();
     }
 }
+
 
 function nextSequence(){
 // Clear userClickedPattern for every new level
